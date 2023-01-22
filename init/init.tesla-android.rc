@@ -1,0 +1,50 @@
+on zygote-start
+    # Create directories for lighttpd logs
+    mkdir /data/vendor/tesla-android
+    mkdir /data/vendor/tesla-android/lighttpd
+    mkdir /data/vendor/tesla-android/udev
+
+service preinstall /system/bin/sh /vendor/etc/preinstall/preinstall.sh
+     user root
+     group root
+     seclabel u:r:init:s0
+     disabled
+     oneshot
+
+service lighttpd /vendor/bin/lighttpd -f /vendor/tesla-android/lighttpd/lighttpd.conf -D
+     user root
+     group root
+     seclabel u:r:init:s0
+     disabled
+
+service tesla-android-virtual-display /system/bin/tesla-android-virtual-display
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled
+
+service tesla-android-virtual-touchscreen /system/bin/tesla-android-virtual-touchscreen
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled
+    
+service tesla-android-usb-networking-initialiser /system/bin/tesla-android-usb-networking-initialiser
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled    
+    
+service usbmuxd /system/bin/usbmuxd -vv -f -n -z
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled    
+
+on property:sys.boot_completed=1
+    start usbmuxd
+    start tesla-android-usb-networking-initialiser
+    start tesla-android-virtual-touchscreen
+    start tesla-android-virtual-display
+    start lighttpd
+    start preinstall
