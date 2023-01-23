@@ -63,13 +63,15 @@ PRODUCT_PACKAGES += \
 
 ################################################################################
 
-# usb_modeswitch
+# Modems
 
 PRODUCT_PACKAGES += \
     usb_modeswitch \
+    tesla-android-usb-networking-initialiser \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/services/usb_modeswitch/usb_modeswitch.conf:$(TARGET_COPY_OUT_VENDOR)/etc/usb_modeswitch.conf \
+    $(LOCAL_PATH)/services/usb_modeswitch/12d1.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/usb_modeswitch/12d1.conf \
+    $(LOCAL_PATH)/services/usb_modeswitch/1bbb-f000.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/usb_modeswitch/1bbb-f000.conf \
 
 ################################################################################
 
@@ -154,9 +156,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.tesla-android.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tesla-android.rc \
-
-PRODUCT_PACKAGES += \
-    tesla-android-usb-networking-initialiser \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/services/iosTethering/bin/usbmuxd:$(TARGET_COPY_OUT_SYSTEM)/bin/usbmuxd \
