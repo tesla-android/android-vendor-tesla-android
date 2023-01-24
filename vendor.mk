@@ -99,6 +99,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/assets/FontManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/FontManifest.json \
      $(LOCAL_PATH)/services/lighttpd/www/assets/NOTICES:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/NOTICES \
      $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/MaterialIcons-Regular.otf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/MaterialIcons-Regular.otf \
+     $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/Roboto-Regular.ttf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/Roboto-Regular.ttf \
      $(LOCAL_PATH)/services/lighttpd/www/assets/images/png/tesla-android-logo.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/images/png/tesla-android-logo.png \
      $(LOCAL_PATH)/services/lighttpd/www/assets/shaders/ink_sparkle.frag:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/shaders/ink_sparkle.frag \
      $(LOCAL_PATH)/services/lighttpd/www/browserconfig.xml:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/browserconfig.xml \
@@ -135,6 +136,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-310x310.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-310x310.png \
      $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-70x70.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-70x70.png \
      $(LOCAL_PATH)/services/lighttpd/www/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/index.html \
+     $(LOCAL_PATH)/services/lighttpd/www/player.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/player.html \
      $(LOCAL_PATH)/services/lighttpd/www/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js \
      $(LOCAL_PATH)/services/lighttpd/www/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/status.html \
      $(LOCAL_PATH)/services/lighttpd/www/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/pcmplayer.js \

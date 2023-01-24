@@ -47,4 +47,7 @@
     <bool name="config_forceDefaultOrientation">true</bool>
     <bool name="config_supportAutoRotation">false</bool>
     <bool name="config_deskDockEnablesAccelerometer">false</bool>
+    <!-- Flag indicating that the media framework should not allow changes or mute on any
+         stream or global volumes. -->
+    <bool name="config_useFixedVolume">true</bool>
 </resources>
