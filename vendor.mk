@@ -1,6 +1,19 @@
 ################################################################################
 
-# Display density override
+# OTA Updates
+
+PRODUCT_PACKAGES += \
+    Updater \
+    update_engine \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.tesla-android.build.version=2023.5.1 \
+    ro.tesla-android.device=rpi4 \
+    ro.tesla-android.releasetype=OFFICIAL \
+    tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/official \
+    tesla-android.updater.allow_downgrading=true \
+
+################################################################################
 
 # Screen orientation lock
 
