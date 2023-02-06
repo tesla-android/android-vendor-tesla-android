@@ -7,7 +7,7 @@ PRODUCT_PACKAGES += \
     update_engine \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.5.1 \
+    ro.tesla-android.build.version=2023.6.1 \
     ro.tesla-android.device=rpi4 \
     ro.tesla-android.releasetype=OFFICIAL \
     tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/official \
@@ -114,7 +114,6 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/MaterialIcons-Regular.otf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/MaterialIcons-Regular.otf \
      $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/Roboto-Regular.ttf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/Roboto-Regular.ttf \
      $(LOCAL_PATH)/services/lighttpd/www/assets/images/png/tesla-android-logo.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/images/png/tesla-android-logo.png \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/shaders/ink_sparkle.frag:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/shaders/ink_sparkle.frag \
      $(LOCAL_PATH)/services/lighttpd/www/browserconfig.xml:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/browserconfig.xml \
      $(LOCAL_PATH)/services/lighttpd/www/canvaskit/canvaskit.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/canvaskit.js \
      $(LOCAL_PATH)/services/lighttpd/www/canvaskit/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/canvaskit.wasm \
