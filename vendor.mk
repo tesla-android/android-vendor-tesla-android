@@ -5,6 +5,8 @@
 PRODUCT_PACKAGES += \
     Updater \
     update_engine \
+    update_engine_sideload \
+    update_verifier \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.tesla-android.build.version=2023.6.1 \
