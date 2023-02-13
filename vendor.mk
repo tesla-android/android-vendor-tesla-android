@@ -9,7 +9,7 @@ PRODUCT_PACKAGES += \
     update_verifier \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.6.1 \
+    ro.tesla-android.build.version=2023.7.1 \
     ro.tesla-android.device=rpi4 \
     ro.tesla-android.releasetype=OFFICIAL \
     tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/official \
@@ -153,6 +153,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/player.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/player.html \
      $(LOCAL_PATH)/services/lighttpd/www/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js \
      $(LOCAL_PATH)/services/lighttpd/www/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/status.html \
+     $(LOCAL_PATH)/services/lighttpd/www/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/connectivity_check.txt \
      $(LOCAL_PATH)/services/lighttpd/www/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/pcmplayer.js \
      $(LOCAL_PATH)/services/lighttpd/www/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/version.json \
 
