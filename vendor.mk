@@ -59,6 +59,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     tesla-android-virtual-display \
 
+GD_LCD_DENSITY := 180
+
 ################################################################################
 
 # ih8sn
