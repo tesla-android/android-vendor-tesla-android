@@ -4,11 +4,11 @@
 
 $(call inherit-product, vendor/tesla-android/vendor.mk)
 
-$(call inherit-product, device/glodroid/rpi4/rpi4.mk)
+$(call inherit-product, vendor/devices-community/gd_rpi4/gd_rpi4.mk)
 
 PRODUCT_BOARD_PLATFORM := broadcom
 PRODUCT_NAME := tesla_android_rpi4
-PRODUCT_DEVICE := rpi4
+PRODUCT_DEVICE := gd_rpi4
 PRODUCT_BRAND := RaspberryPI
 PRODUCT_MODEL := rpi4
 PRODUCT_MANUFACTURER := RaspberryPiFoundation
