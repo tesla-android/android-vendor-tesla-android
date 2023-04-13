@@ -151,7 +151,6 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js \
      $(LOCAL_PATH)/services/lighttpd/www/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/status.html \
      $(LOCAL_PATH)/services/lighttpd/www/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/connectivity_check.txt \
-     $(LOCAL_PATH)/services/lighttpd/www/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/pcmplayer.js \
      $(LOCAL_PATH)/services/lighttpd/www/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/version.json \
 
 ################################################################################
