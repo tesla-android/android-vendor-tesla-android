@@ -12,3 +12,7 @@ PRODUCT_DEVICE := gd_rpi4
 PRODUCT_BRAND := RaspberryPI
 PRODUCT_MODEL := rpi4
 PRODUCT_MANUFACTURER := RaspberryPiFoundation
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.tesla-android.device=rpi4 \
+    tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/official \
