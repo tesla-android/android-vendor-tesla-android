@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "d676387f56c16d06a811f151ade04a41",
+  "version.json": "e0fed16b0b5214a2432a79b2b8f301e3",
 "favicon.ico": "1a96a32111338f8aa97efc700d8a7612",
-"index.html": "ee5b0af63d9ebfbc54d21f97ddbc20e9",
-"/": "ee5b0af63d9ebfbc54d21f97ddbc20e9",
-"main.dart.js": "e4ec9f26b968ddfb9de11ef2f7d341af",
+"index.html": "9014711f7db995cd391c9556711f5c02",
+"/": "9014711f7db995cd391c9556711f5c02",
+"main.dart.js": "0a4b4adb11db3323841116836f24d7f1",
 "flutter.js": "1cfe996e845b3a8a33f57607e8b09ee4",
 "player.html": "1167424324dd85ceabd9aed8220e7fa6",
 "icons/favicon-16x16.png": "dc6aaa006f55ef3f9f68fd1594072920",
@@ -39,7 +39,7 @@ const RESOURCES = {
 "online/connectivity_check.txt": "7f46165474d11ee5836777d85df2cdab",
 "assets/images/png/tesla-android-logo.png": "9ce39021f18753f2c21a4ae08ae198ce",
 "assets/AssetManifest.json": "83d94fdc4d63e7e0e0439f8c18b8fafd",
-"assets/NOTICES": "cf9cf309c9c36b0b10fe294fb950e9ae",
+"assets/NOTICES": "b7f06d08795e3f1ae3d984519d61806e",
 "assets/FontManifest.json": "f589285d193a17a5dcaef1fc3e0e834f",
 "assets/fonts/Roboto-Regular.ttf": "8a36205bd9b83e03af0591a004bc97f4",
 "assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
