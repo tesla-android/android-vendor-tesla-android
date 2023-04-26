@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/">
+  <base href="$FLUTTER_BASE_HREF">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="">
@@ -25,7 +25,7 @@
   <meta name="theme-color" content="#ffffff">
   <script>
   // The value below is injected by flutter build, do not touch.
-  var serviceWorkerVersion = '2432027873';
+  var serviceWorkerVersion = null;
   </script>
   <script>
   function createAudioContext() {
@@ -108,5 +108,30 @@
 				});
 			});
 		</script>
+        <script src="pcmplayer.js"></script>
+        <script>
+            var player;
+		    window.addEventListener('click', function(e) {
+				if (typeof player == "undefined") {
+					player = new PCMPlayer({
+						inputCodec: 'Float32',
+						channels: 2,
+						sampleRate: 48000,
+						flushTime: 150,
+					});
+				}
+			});
+			function feedPlayer(data) {
+			  if (typeof player != "undefined") {
+                player.feed(data);
+			  }
+			};
+			function setPlayerVolume(volume) {
+			  if (typeof player != "undefined") {
+                player.volume(volume);
+			  }
+			};
+		</script>
+
 </body>
 </html>
