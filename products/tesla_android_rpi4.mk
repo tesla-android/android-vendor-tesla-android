@@ -16,3 +16,6 @@ PRODUCT_MANUFACTURER := RaspberryPiFoundation
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.tesla-android.device=rpi4 \
     tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/official \
+
+GD_LOWRAM_CONFIG = true
+GD_LCD_DENSITY = 200
