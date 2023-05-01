@@ -7,10 +7,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.tesla-android.build.version=2023.18.0 \
-    ro.tesla-android.releasetype=OFFICIAL \
+    ro.tesla-android.releasetype=RELEASE \
     tesla-android.updater.allow_downgrading=true \
 
 ################################################################################
+
+# Release keys
+
+PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
+PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
+PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
 
 # Screen orientation lock
 
