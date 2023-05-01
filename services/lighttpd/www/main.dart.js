@@ -69389,7 +69389,7 @@ A.JQ.prototype={
 H(a){var s=t.oe
 return A.aiI(new A.a85(A.CM(a,s)),s,t.fT)}}
 A.a85.prototype={
-$2(a,b){var s=null,r=b.a,q=this.a,p=A.a([B.LK,new A.xR(B.BJ,"State","Disable if you intend to use Bluetooth audio, HDMI or the headphone jack",new A.Kd(r,new A.a83(q),s),s)],t.p)
+$2(a,b){var s=null,r=b.a,q=this.a,p=A.a([B.LK,new A.xR(B.BJ,"State","Disable if you intend to use Bluetooth audio",new A.Kd(r,new A.a83(q),s),s)],t.p)
 if(r)p.push(new A.xR(B.BK,"Volume",s,new A.y1(b.c,new A.a84(q),0,1,25,s),s))
 p.push(B.Kg)
 p.push(B.Kf)
