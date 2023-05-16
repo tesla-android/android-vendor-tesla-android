@@ -6,17 +6,32 @@ PRODUCT_PACKAGES += \
     Updater \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.18.2 \
-    ro.tesla-android.releasetype=RELEASE \
+    ro.tesla-android.build.version=2023.20.0.1 \
+    ro.tesla-android.releasetype=BETA \
     tesla-android.updater.allow_downgrading=true \
 
 ################################################################################
 
 # Release keys
 
-PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
-PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
-PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
+#PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
+#PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
+#PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
+
+################################################################################
+
+# Configuration manager
+
+PRODUCT_PACKAGES += \
+    tesla-android-configuration-manager \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.tesla-android.softap.band_type=1 \
+    persist.tesla-android.softap.channel=6 \
+    persist.tesla-android.softap.channel_width=2 \
+    persist.tesla-android.softap.is_enabled=1 \
+
+################################################################################
 
 # Screen orientation lock
 
@@ -153,6 +168,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/index.html \
      $(LOCAL_PATH)/services/lighttpd/www/player.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/player.html \
      $(LOCAL_PATH)/services/lighttpd/www/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js \
+     $(LOCAL_PATH)/services/lighttpd/www/main.dart.js.map:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js.map \
      $(LOCAL_PATH)/services/lighttpd/www/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/pcmplayer.js \
      $(LOCAL_PATH)/services/lighttpd/www/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/status.html \
      $(LOCAL_PATH)/services/lighttpd/www/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/connectivity_check.txt \
