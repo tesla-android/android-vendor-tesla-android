@@ -19,6 +19,12 @@ service lighttpd /vendor/bin/lighttpd -f /vendor/tesla-android/lighttpd/lighttpd
      seclabel u:r:init:s0
      disabled
 
+service tesla-android-configuration-manager /system/bin/tesla-android-configuration-manager
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled
+
 service tesla-android-virtual-display /system/bin/tesla-android-virtual-display
     user root
     group root
@@ -45,6 +51,7 @@ service usbmuxd /system/bin/usbmuxd -vv -f -n -z
 
 on property:sys.boot_completed=1
     start usbmuxd
+    start tesla-android-configuration-manager
     start tesla-android-usb-networking-initialiser
     start tesla-android-virtual-touchscreen
     start tesla-android-virtual-display
