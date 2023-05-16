@@ -2,4 +2,11 @@
 <resources>
     <string name="wifi_tether_configure_ssid_default" translatable="false">Tesla-Android</string>
     <integer translatable="false" name="config_wifiFrameworkSoftApShutDownTimeoutMilliseconds">86400000</integer>
+    <bool translatable="false" name="config_wifi5ghzSupport">true</bool>
+    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
+    <bool translatable="false" name="config_wifiSoftap5ghzSupported">true</bool>
+    <bool translatable="false" name="config_wifiSoftap24ghzSupported">true</bool>
+    <string translatable="false" name="config_wifiSoftap2gChannelList">1-14</string>
+    <string translatable="false" name="config_wifiSoftap5gChannelList">34,36,38,40,42,44,46,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140,144,149,153,157,161,165</string>
+    <bool translatable="false" name="config_wifiSoftapAutoAppendLowerBandsToBandConfigurationEnabled">false</bool>
 </resources>
