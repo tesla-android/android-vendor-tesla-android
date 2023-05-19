@@ -6,7 +6,7 @@ PRODUCT_PACKAGES += \
     Updater \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.20.0.5 \
+    ro.tesla-android.build.version=2023.20.0.6 \
     ro.tesla-android.releasetype=RELEASE \
     tesla-android.updater.allow_downgrading=true \
 
