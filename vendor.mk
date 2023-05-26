@@ -1,22 +1,30 @@
 ################################################################################
 
+# Version
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.tesla-android.build.version=2023.20.1.1 \
+
+################################################################################
+
+# Flavor and signing
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.tesla-android.releasetype=RELEASE \
+
+PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
+PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
+PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
+
+################################################################################
+
 # OTA Updates
 
 PRODUCT_PACKAGES += \
     Updater \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.20.1.1 \
-    ro.tesla-android.releasetype=RELEASE \
     tesla-android.updater.allow_downgrading=true \
-
-################################################################################
-
-# Release keys
-
-PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
-PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
-PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
 
 ################################################################################
 
