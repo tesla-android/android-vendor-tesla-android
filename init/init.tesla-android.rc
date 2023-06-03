@@ -36,6 +36,12 @@ service tesla-android-virtual-touchscreen /system/bin/tesla-android-virtual-touc
     group root
     seclabel u:r:init:s0
     disabled
+
+service tesla-android-virtual-gnss /system/bin/tesla-android-virtual-gnss
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled
     
 service tesla-android-usb-networking-initialiser /system/bin/tesla-android-usb-networking-initialiser
     user root
@@ -55,5 +61,6 @@ on property:sys.boot_completed=1
     start tesla-android-usb-networking-initialiser
     start tesla-android-virtual-touchscreen
     start tesla-android-virtual-display
+    start tesla-android-virtual-gnss
     start lighttpd
     start preinstall
