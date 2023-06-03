@@ -44,6 +44,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ################################################################################
 
+# GPS
+
+PRODUCT_PACKAGES += \
+    gps.default \
+    android.hardware.gnss@2.1-impl \
+    android.hardware.gnss@2.1-service \
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+
+DEVICE_MANIFEST_FILE += \
+    vendor/tesla-android/hardware/gps/android.hardware.gnss@2.1-service.xml \
+
+################################################################################
+
 # Screen orientation lock
 
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.screen.landscape.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.screen.landscape.xml \
