@@ -150,6 +150,10 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/lighttpd:$(TARGET_COPY_OUT_VENDOR)/bin/lighttpd \
      $(LOCAL_PATH)/services/lighttpd/lighttpd.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/lighttpd.conf \
+     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/fullchain.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/privkey.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem \
      $(LOCAL_PATH)/services/lighttpd/www/assets/AssetManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/AssetManifest.json \
      $(LOCAL_PATH)/services/lighttpd/www/assets/FontManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/FontManifest.json \
      $(LOCAL_PATH)/services/lighttpd/www/assets/NOTICES:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/NOTICES \
