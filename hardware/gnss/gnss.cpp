@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <log/log.h>
+#include <string>
 #include <log/log.h>
 #include <cutils/properties.h>
 #include <stdlib.h>
@@ -113,6 +113,8 @@ Return<bool> Gnss20::start() {
         char longitudeDegreesString[PROP_VALUE_MAX];
         char verticalAccuracyMetersString[PROP_VALUE_MAX];
         char timestampString[PROP_VALUE_MAX];
+        char speedString[PROP_VALUE_MAX];
+        char bearingString[PROP_VALUE_MAX];
 
         ahg10::GnssLocation location;
 
@@ -122,22 +124,36 @@ Return<bool> Gnss20::start() {
         		&& property_get("persist.tesla-android.gps.vertical_accuracy", verticalAccuracyMetersString, "") > 0
         		&& property_get("persist.tesla-android.gps.timestamp", timestampString, "") > 0) {
 
+                double speedMetersPerSec = 0.0;
+                if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
+                    && std::string(speedString) != "not-available") {
+                    speedMetersPerSec = atof(speedString);
+                    flags |= ahg10::GnssLocationFlags::HAS_SPEED;
+                }
+
+                double bearingDegrees = 0.0;
+                if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
+                    && std::string(bearingString) != "not-available") {
+                    bearingDegrees = atof(bearingString);
+                    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
+                }
+
             	location = {
                      .gnssLocationFlags = flags,
                      .latitudeDegrees = atof(latitudeDegreesString),
                      .longitudeDegrees = atof(longitudeDegreesString),
                      .altitudeMeters = 0.0, // always 0 in Flutter Web
-                     .speedMetersPerSec = 0.0, // always 0 in Flutter Web
-                     .bearingDegrees = 0.0, // always 0 in Flutter Web
+                     .speedMetersPerSec = static_cast<float>(speedMetersPerSec),
+                     .bearingDegrees = static_cast<float>(bearingDegrees),
                      .horizontalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)), // Required for Location object to be considered complete
-					 .verticalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)),
+		     .verticalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)),
                      .speedAccuracyMetersPerSecond = 0.0, // always 0 in Flutter Web
                      .bearingAccuracyDegrees = 0.0, // always 0 in Flutter Web
                      .timestamp = atoll(timestampString),
             	};
-           		this->reportLocation(location);
-        	}
-        	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+           	this->reportLocation(location);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     });
 
