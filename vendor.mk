@@ -41,6 +41,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.offline-mode.is_enabled=1 \
     persist.tesla-android.offline-mode.telemetry.is_enabled=1 \
     persist.tesla-android.offline-mode.tesla-firmware-downloads=1 \
+    persist.tesla-android.virtual-display.resolution.width=1088 \
+    persist.tesla-android.virtual-display.resolution.height=832 \
+    persist.tesla-android.virtual-display.density=200 \
+    persist.tesla-android.virtual-display.lowres=0 \
+    persist.drm.headless.override.config="1088x832@60" \
 
 ################################################################################
 
