@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.23.0.1 \
+    ro.tesla-android.build.version=2023.25.0.1 \
 
 ################################################################################
 
@@ -34,8 +34,8 @@ PRODUCT_PACKAGES += \
     tesla-android-configuration-manager \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.tesla-android.softap.band_type=1 \
-    persist.tesla-android.softap.channel=6 \
+    persist.tesla-android.softap.band_type=2 \
+    persist.tesla-android.softap.channel=44 \
     persist.tesla-android.softap.channel_width=2 \
     persist.tesla-android.softap.is_enabled=1 \
     persist.tesla-android.offline-mode.is_enabled=1 \
@@ -45,7 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.resolution.height=832 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
-    persist.drm.headless.override.config="1088x832@60" \
+    persist.drm.headless.override.config="1088x832@30" \
 
 ################################################################################
 
