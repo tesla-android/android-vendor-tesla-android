@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.softap.band_type=2 \
     persist.tesla-android.softap.channel=44 \
-    persist.tesla-android.softap.channel_width=2 \
+    persist.tesla-android.softap.channel_width=3 \
     persist.tesla-android.softap.is_enabled=1 \
     persist.tesla-android.offline-mode.is_enabled=1 \
     persist.tesla-android.offline-mode.telemetry.is_enabled=1 \
@@ -45,7 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.resolution.height=832 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
-    persist.drm.headless.override.config="1088x832@30" \
+    persist.drm_hwc.headless.config="1088x832@30" \
 
 ################################################################################
 
