@@ -45,6 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.resolution.height=832 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
+    persist.tesla-android.virtual-display.renderer=0 \
     persist.drm_hwc.headless.config="1088x832@60" \
 
 ################################################################################
