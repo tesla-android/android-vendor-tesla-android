@@ -1,0 +1,35 @@
+cc_binary {
+    name: "android.hardware.gnss@2.0-service.tesla-android",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.gnss@2.0-service.tesla-android.rc"],
+    vintf_fragments: ["android.hardware.gnss@2.0-service.tesla-android.xml"],
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "agnss.cpp",
+        "gnss_configuration.cpp",
+        "gnss_measurement.cpp",
+        "gnss.cpp",
+        "main.cpp",
+        "util.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "android.hardware.gnss@2.0",
+        "android.hardware.gnss@1.1",
+        "android.hardware.gnss@1.0",
+        "android.hardware.gnss.measurement_corrections@1.0",
+        "android.hardware.gnss.visibility_control@1.0",
+    ],
+    include_dirs: [
+         "external/libws",
+     ],
+    cflags: [
+        "-DLOG_TAG=\"android.hardware.gnss@2.0-service.tesla-android\"",
+        "-DANDROID_BASE_UNIQUE_FD_DISABLE_IMPLICIT_CONVERSION",
+    ],
+}

@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.20.1.1 \
+    ro.tesla-android.build.version=2023.27.0.1 \
 
 ################################################################################
 
@@ -34,13 +34,32 @@ PRODUCT_PACKAGES += \
     tesla-android-configuration-manager \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.tesla-android.softap.band_type=1 \
-    persist.tesla-android.softap.channel=6 \
-    persist.tesla-android.softap.channel_width=2 \
+    persist.tesla-android.softap.band_type=2 \
+    persist.tesla-android.softap.channel=44 \
+    persist.tesla-android.softap.channel_width=3 \
     persist.tesla-android.softap.is_enabled=1 \
     persist.tesla-android.offline-mode.is_enabled=1 \
     persist.tesla-android.offline-mode.telemetry.is_enabled=1 \
     persist.tesla-android.offline-mode.tesla-firmware-downloads=1 \
+    persist.tesla-android.virtual-display.resolution.width=1088 \
+    persist.tesla-android.virtual-display.resolution.height=832 \
+    persist.tesla-android.virtual-display.density=200 \
+    persist.tesla-android.virtual-display.lowres=0 \
+    persist.tesla-android.virtual-display.renderer=0 \
+    persist.drm_hwc.headless.config="1088x832@60" \
+
+################################################################################
+
+# GPS
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.0-service.tesla-android \
+    tesla-android-virtual-gnss
+
+BOARD_SEPOLICY_DIRS += vendor/tesla-android/hardware/gnss/sepolicy
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 
 ################################################################################
 
@@ -137,53 +156,68 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/lighttpd:$(TARGET_COPY_OUT_VENDOR)/bin/lighttpd \
      $(LOCAL_PATH)/services/lighttpd/lighttpd.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/lighttpd.conf \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/AssetManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/AssetManifest.json \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/FontManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/FontManifest.json \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/NOTICES:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/NOTICES \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/MaterialIcons-Regular.otf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/MaterialIcons-Regular.otf \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/fonts/Roboto-Regular.ttf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/fonts/Roboto-Regular.ttf \
-     $(LOCAL_PATH)/services/lighttpd/www/assets/images/png/tesla-android-logo.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/assets/images/png/tesla-android-logo.png \
-     $(LOCAL_PATH)/services/lighttpd/www/browserconfig.xml:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/browserconfig.xml \
-     $(LOCAL_PATH)/services/lighttpd/www/canvaskit/canvaskit.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/canvaskit.js \
-     $(LOCAL_PATH)/services/lighttpd/www/canvaskit/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/canvaskit.wasm \
-     $(LOCAL_PATH)/services/lighttpd/www/canvaskit/profiling/canvaskit.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/profiling/canvaskit.js \
-     $(LOCAL_PATH)/services/lighttpd/www/canvaskit/profiling/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/canvaskit/profiling/canvaskit.wasm \
-     $(LOCAL_PATH)/services/lighttpd/www/favicon.ico:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/favicon.ico \
-     $(LOCAL_PATH)/services/lighttpd/www/flutter.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/flutter.js \
-     $(LOCAL_PATH)/services/lighttpd/www/flutter_service_worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/flutter_service_worker.js \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-144x144.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-192x192.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-192x192.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-36x36.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-36x36.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-48x48.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-48x48.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-72x72.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-72x72.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/android-icon-96x96.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/android-icon-96x96.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-114x114.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-114x114.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-120x120.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-120x120.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-144x144.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-152x152.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-152x152.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-180x180.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-180x180.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-57x57.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-57x57.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-60x60.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-60x60.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-72x72.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-72x72.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-76x76.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-76x76.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon-precomposed.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon-precomposed.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/apple-icon.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/apple-icon.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/favicon-16x16.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/favicon-16x16.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/favicon-32x32.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/favicon-32x32.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/favicon-96x96.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/favicon-96x96.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/manifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/manifest.json \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-144x144.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-150x150.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-150x150.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-310x310.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-310x310.png \
-     $(LOCAL_PATH)/services/lighttpd/www/icons/ms-icon-70x70.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/icons/ms-icon-70x70.png \
-     $(LOCAL_PATH)/services/lighttpd/www/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/index.html \
-     $(LOCAL_PATH)/services/lighttpd/www/player.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/player.html \
-     $(LOCAL_PATH)/services/lighttpd/www/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js \
-     $(LOCAL_PATH)/services/lighttpd/www/main.dart.js.map:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/main.dart.js.map \
-     $(LOCAL_PATH)/services/lighttpd/www/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/pcmplayer.js \
-     $(LOCAL_PATH)/services/lighttpd/www/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/status.html \
-     $(LOCAL_PATH)/services/lighttpd/www/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/online/connectivity_check.txt \
-     $(LOCAL_PATH)/services/lighttpd/www/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/www/version.json \
+     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/fullchain.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/privkey.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem \
+     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/AssetManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/AssetManifest.json \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/FontManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/FontManifest.json \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/NOTICES:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/NOTICES \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/fonts/MaterialIcons-Regular.otf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/fonts/MaterialIcons-Regular.otf \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/fonts/Roboto-Regular.ttf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/fonts/Roboto-Regular.ttf \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/images/png/tesla-android-logo.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/images/png/tesla-android-logo.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/browserconfig.xml:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//browserconfig.xml \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/canvaskit.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/canvaskit.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/canvaskit.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/favicon.ico:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//favicon.ico \
+     $(LOCAL_PATH)/services/lighttpd/www-default/flutter.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//flutter.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/flutter_service_worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//flutter_service_worker.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-144x144.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-192x192.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-192x192.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-36x36.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-36x36.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-48x48.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-48x48.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-72x72.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-72x72.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/android-icon-96x96.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/android-icon-96x96.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-114x114.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-114x114.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-120x120.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-120x120.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-144x144.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-152x152.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-152x152.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-180x180.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-180x180.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-57x57.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-57x57.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-60x60.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-60x60.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-72x72.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-72x72.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-76x76.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-76x76.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon-precomposed.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon-precomposed.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/apple-icon.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/apple-icon.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/favicon-16x16.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/favicon-16x16.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/favicon-32x32.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/favicon-32x32.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/favicon-96x96.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/favicon-96x96.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/manifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/manifest.json \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-144x144.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/ms-icon-144x144.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-150x150.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/ms-icon-150x150.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-310x310.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/ms-icon-310x310.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-70x70.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//icons/ms-icon-70x70.png \
+     $(LOCAL_PATH)/services/lighttpd/www-default/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//index.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//main.dart.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.js.map:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//main.dart.js.map \
+     $(LOCAL_PATH)/services/lighttpd/www-default/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//online/connectivity_check.txt \
+     $(LOCAL_PATH)/services/lighttpd/www-default/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//online/status.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/pcmplayer.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//pcmplayer.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//version.json \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/AssetManifest.bin:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/AssetManifest.bin \
+     $(LOCAL_PATH)/services/lighttpd/www-default/assets/shaders/ink_sparkle.frag:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//assets/shaders/ink_sparkle.frag \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/chromium/canvaskit.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/chromium/canvaskit.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/chromium/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/chromium/canvaskit.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.worker.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGL.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/webGL.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvasWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/canvasWebCodecs.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGLWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/webGLWebCodecs.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvas.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/canvas.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/workerWebGLWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/workerWebGLWebCodecs.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display//imgTag.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/imgTag.html \
+     $(LOCAL_PATH)/services/lighttpd/www-redirect/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-redirect/index.html \
 
 ################################################################################
 

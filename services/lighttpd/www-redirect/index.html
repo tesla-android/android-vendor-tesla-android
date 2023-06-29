@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Page</title>
+    <style>
+        :root {
+            --color-text: black;
+            --color-background: #f8f8f8;
+            --color-button: #F44336;
+            --color-button-hover: #E53935;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: white;
+                --color-background: #404040;
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            font-family: Arial, sans-serif;
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            background-color: var(--color-button);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: var(--color-button-hover);
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location.href = 'https://fullscreen.device.teslaandroid.com';
+        }, 3000);
+    </script>
+</head>
+<body>
+    <a href="https://fullscreen.device.teslaandroid.com"><button>Go to fullscreen.device.teslaandroid.com</button></a>
+    <p class="bottom-text">Press the button if the Tesla Android app did not launch automatically</p>
+</body>
+</html>
