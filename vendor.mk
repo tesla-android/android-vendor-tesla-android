@@ -89,15 +89,7 @@ PRODUCT_PACKAGES += \
 
 # Google Apps
 
-$(call inherit-product, vendor/google/gms/config.mk)
-
-################################################################################
-
-# Java Optimizations
-
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-SYSTEM_OPTIMIZE_JAVA := true
-SYSTEMUI_OPTIMIZE_JAVA := true
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk) 
 
 ################################################################################
 
