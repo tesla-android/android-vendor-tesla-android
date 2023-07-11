@@ -47,6 +47,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.lowres=0 \
     persist.tesla-android.virtual-display.renderer=0 \
     persist.drm_hwc.headless.config="1088x832@60" \
+    persist.tesla-android.browser_audio.is_enabled=1 \
+    persist.tesla-android.browser_audio.volume=100 \
 
 ################################################################################
 
