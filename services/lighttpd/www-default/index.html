@@ -24,7 +24,7 @@
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <script>
-            var serviceWorkerVersion = "1163812812";
+            var serviceWorkerVersion = "4184358484";
         </script>
   <script>
             function createAudioContext() {
@@ -103,7 +103,7 @@
                     })
                     .then(function (engineInitializer) {
                         loading.classList.add("main_done");
-                        return engineInitializer.initializeEngine({ canvasKitBaseUrl: "/canvaskit/", renderer: "canvaskit", canvasKitMaximumSurfaces: 3 });
+                        return engineInitializer.initializeEngine({renderer: "html"});
                     })
                     .then(function (appRunner) {
                         loading.classList.add("init_done");
