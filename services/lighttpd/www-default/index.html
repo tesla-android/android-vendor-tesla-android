@@ -24,7 +24,7 @@
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <script>
-            var serviceWorkerVersion = "4184358484";
+            var serviceWorkerVersion = "3445482302";
         </script>
   <script>
             function createAudioContext() {
@@ -103,7 +103,7 @@
                     })
                     .then(function (engineInitializer) {
                         loading.classList.add("main_done");
-                        return engineInitializer.initializeEngine({renderer: "html"});
+                        return engineInitializer.initializeEngine();
                     })
                     .then(function (appRunner) {
                         loading.classList.add("init_done");
@@ -117,30 +117,6 @@
                         }, 200);
                     });
             });
-        </script>
-<script src="pcmplayer.js"></script>
-<script>
-            var player;
-            window.addEventListener("click", function (e) {
-                if (typeof player == "undefined") {
-                    player = new PCMPlayer({
-                        inputCodec: "Float32",
-                        channels: 2,
-                        sampleRate: 48000,
-                        flushTime: 200,
-                    });
-                }
-            });
-            function feedPlayer(data) {
-                if (typeof player != "undefined") {
-                    player.feed(data);
-                }
-            }
-            function setPlayerVolume(volume) {
-                if (typeof player != "undefined") {
-                    player.volume(volume);
-                }
-            }
         </script>
 </body>
 </html>

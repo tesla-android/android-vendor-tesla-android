@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.28.1.0 \
+    ro.tesla-android.build.version=2023.28.2.0 \
 
 ################################################################################
 
@@ -213,12 +213,14 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.wasm \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//canvaskit/skwasm.worker.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGL.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/webGL.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvasWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/canvasWebCodecs.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGLWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/webGLWebCodecs.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvas.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/canvas.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display/workerWebGLWebCodecs.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/workerWebGLWebCodecs.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/display//imgTag.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/imgTag.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGL.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/display/webGL.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvasWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/display/canvasWebCodecs.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/webGLWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/display/webGLWebCodecs.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/canvas.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default//display/canvas.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/workerWebGLWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/display/workerWebGLWebCodecs.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/display/imgTag.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/display/imgTag.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/android.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/android.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/reconnecting-websocket.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/reconnecting-websocket.js \
      $(LOCAL_PATH)/services/lighttpd/www-redirect/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-redirect/index.html \
 
 ################################################################################
