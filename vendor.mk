@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.30.2.0 \
+    ro.tesla-android.build.version=2023.30.3.0 \
 
 ################################################################################
 
@@ -32,6 +32,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     tesla-android-configuration-manager \
+
+# Renderer and isH264 are unused now 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.softap.band_type=2 \
