@@ -125,18 +125,18 @@ Return<bool> Gnss20::start() {
         		&& property_get("persist.tesla-android.gps.timestamp", timestampString, "") > 0) {
 
                 double speedMetersPerSec = 0.0;
-                //if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
-                //    && std::string(speedString) != "not-available") {
-                //    speedMetersPerSec = atof(speedString);
-                //    flags |= ahg10::GnssLocationFlags::HAS_SPEED;
-                //}
+                if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
+                    && std::string(speedString) != "not-available") {
+                    speedMetersPerSec = atof(speedString);
+                    flags |= ahg10::GnssLocationFlags::HAS_SPEED;
+                }
 
                 double bearingDegrees = 0.0;
-                //if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
-                //    && std::string(bearingString) != "not-available") {
-                //    bearingDegrees = atof(bearingString);
-                //    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
-                //}
+                if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
+                    && std::string(bearingString) != "not-available") {
+                    bearingDegrees = atof(bearingString);
+                    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
+                }
 
             	location = {
                      .gnssLocationFlags = flags,
