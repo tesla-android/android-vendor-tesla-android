@@ -113,8 +113,8 @@ Return<bool> Gnss20::start() {
         char longitudeDegreesString[PROP_VALUE_MAX];
         char verticalAccuracyMetersString[PROP_VALUE_MAX];
         char timestampString[PROP_VALUE_MAX];
-        //char speedString[PROP_VALUE_MAX];
-        //char bearingString[PROP_VALUE_MAX];
+        char speedString[PROP_VALUE_MAX];
+        char bearingString[PROP_VALUE_MAX];
 
         ahg10::GnssLocation location;
 
@@ -146,7 +146,7 @@ Return<bool> Gnss20::start() {
                      .speedMetersPerSec = static_cast<float>(speedMetersPerSec),
                      .bearingDegrees = static_cast<float>(bearingDegrees),
                      .horizontalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)), // Required for Location object to be considered complete
-		     .verticalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)),
+		     .verticalAccuracyMeters = 0.0,
                      .speedAccuracyMetersPerSecond = 0.0, // always 0 in Flutter Web
                      .bearingAccuracyDegrees = 0.0, // always 0 in Flutter Web
                      .timestamp = atoll(timestampString),
