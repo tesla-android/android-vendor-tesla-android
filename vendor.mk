@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.30.3.0 \
+    ro.tesla-android.build.version=2023.32.1.0 \
 
 ################################################################################
 
@@ -223,6 +223,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/workerWebGLWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/workerWebGLWebCodecs.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/imgTag.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/imgTag.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/android.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/android.html \
+     $(LOCAL_PATH)/services/lighttpd/www-default/estimator.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/estimator.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/reconnecting-websocket.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/reconnecting-websocket.js \
      $(LOCAL_PATH)/services/lighttpd/www-redirect/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-redirect/index.html \
 
