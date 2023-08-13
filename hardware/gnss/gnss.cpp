@@ -113,8 +113,8 @@ Return<bool> Gnss20::start() {
         char longitudeDegreesString[PROP_VALUE_MAX];
         char verticalAccuracyMetersString[PROP_VALUE_MAX];
         char timestampString[PROP_VALUE_MAX];
-        //char speedString[PROP_VALUE_MAX];
-        //char bearingString[PROP_VALUE_MAX];
+        char speedString[PROP_VALUE_MAX];
+        char bearingString[PROP_VALUE_MAX];
 
         ahg10::GnssLocation location;
 
@@ -125,18 +125,18 @@ Return<bool> Gnss20::start() {
         		&& property_get("persist.tesla-android.gps.timestamp", timestampString, "") > 0) {
 
                 double speedMetersPerSec = 0.0;
-                //if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
-                //    && std::string(speedString) != "not-available") {
-                //    speedMetersPerSec = atof(speedString);
-                //    flags |= ahg10::GnssLocationFlags::HAS_SPEED;
-                //}
+                if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
+                    && std::string(speedString) != "not-available") {
+                    speedMetersPerSec = atof(speedString);
+                    flags |= ahg10::GnssLocationFlags::HAS_SPEED;
+                }
 
                 double bearingDegrees = 0.0;
-                //if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
-                //    && std::string(bearingString) != "not-available") {
-                //    bearingDegrees = atof(bearingString);
-                //    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
-                //}
+                if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
+                    && std::string(bearingString) != "not-available") {
+                    bearingDegrees = atof(bearingString);
+                    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
+                }
 
             	location = {
                      .gnssLocationFlags = flags,
@@ -146,7 +146,7 @@ Return<bool> Gnss20::start() {
                      .speedMetersPerSec = static_cast<float>(speedMetersPerSec),
                      .bearingDegrees = static_cast<float>(bearingDegrees),
                      .horizontalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)), // Required for Location object to be considered complete
-		     .verticalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)),
+		     .verticalAccuracyMeters = 0.0,
                      .speedAccuracyMetersPerSecond = 0.0, // always 0 in Flutter Web
                      .bearingAccuracyDegrees = 0.0, // always 0 in Flutter Web
                      .timestamp = atoll(timestampString),
