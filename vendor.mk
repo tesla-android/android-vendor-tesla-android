@@ -26,6 +26,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     tesla-android.updater.allow_downgrading=true \
 
+GD_SUPER_PARTITION_SIZE_MB := 7500
+
 ################################################################################
 
 # Configuration manager
