@@ -142,6 +142,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/services/usb_modeswitch/12d1.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/usb_modeswitch/12d1.conf \
     $(LOCAL_PATH)/services/usb_modeswitch/1bbb-f000.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/usb_modeswitch/1bbb-f000.conf \
+    $(LOCAL_PATH)/services/usb_modeswitch/12d1-1f1d.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/usb_modeswitch/12d1-1f1d.conf \
 
 ################################################################################
 

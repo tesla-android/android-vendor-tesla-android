@@ -4,7 +4,7 @@
 
 $(call inherit-product, vendor/tesla-android/vendor.mk)
 
-$(call inherit-product, vendor/devices-community/gd_rpi4/gd_cm4.mk)
+$(call inherit-product, vendor/devices-community/gd_cm4/gd_cm4.mk)
 
 PRODUCT_BOARD_PLATFORM := broadcom
 PRODUCT_NAME := tesla_android_cm4
