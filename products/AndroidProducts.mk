@@ -5,12 +5,16 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/tesla_android_rpi4.mk \
+    $(LOCAL_DIR)/tesla_android_cm4.mk \
     $(LOCAL_DIR)/tesla_android_radxa_zero.mk
 
 COMMON_LUNCH_CHOICES := \
     tesla_android_rpi4-user \
     tesla_android_rpi4-userdebug \
     tesla_android_rpi4-eng \
+    tesla_android_cm4-user \
+    tesla_android_cm4-userdebug \
+    tesla_android_cm4-eng \
     tesla_android_radxa_zero-user \
     tesla_android_radxa_zero-userdebug \
     tesla_android_radxa_zero-eng
