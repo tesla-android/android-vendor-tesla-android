@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.35.100 \
+    ro.tesla-android.build.version=2023.36.1 \
 
 ################################################################################
 
@@ -61,14 +61,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 
-#PRODUCT_PACKAGES += \
-#    android.hardware.gnss@2.0-service.tesla-android \
-#    tesla-android-virtual-gnss
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.0-service.tesla-android \
+    tesla-android-virtual-gnss
 
-#BOARD_SEPOLICY_DIRS += vendor/tesla-android/hardware/gnss/sepolicy
+BOARD_SEPOLICY_DIRS += vendor/tesla-android/hardware/gnss/sepolicy
 
-#PRODUCT_COPY_FILES += \
-#    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 
 ################################################################################
 
