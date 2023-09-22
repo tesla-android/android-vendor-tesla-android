@@ -18,3 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/rpi4/release \
 
 GD_LCD_DENSITY = 200
+
+PRODUCT_COPY_FILES += \
+    vendor/tesla-android/init/init.argonfan.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.argonfan.rc \
+    vendor/tesla-android/init/argonfan.sh:$(TARGET_COPY_OUT_VENDOR)/etc/argonfan.sh \
