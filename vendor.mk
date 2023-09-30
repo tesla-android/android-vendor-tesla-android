@@ -56,7 +56,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.is_responsive=0 \
     persist.tesla-android.virtual-display.is_h264=0 \
     persist.tesla-android.virtual-display.is_variable_refresh=0 \
-    persist.hwui.use_vulkan=false \
 
 ################################################################################
 
