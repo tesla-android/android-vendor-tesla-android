@@ -160,10 +160,6 @@ Return<bool> Gnss20::start() {
     return true;
 }
 
-Gnss20::~Gnss20() {
-    stop();
-}
-
 Return<bool> Gnss20::stop() {
     mIsActive = false;
     if (mThread.joinable()) {
