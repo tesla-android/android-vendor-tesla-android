@@ -104,60 +104,64 @@ Return<bool> Gnss20::start() {
 
     mIsActive = true;
     mThread = std::thread([this]() {
-    	unsigned short flags =
+        while (mIsActive) {
+            unsigned short flags =
                  ahg10::GnssLocationFlags::HAS_LAT_LONG |
                  ahg10::GnssLocationFlags::HAS_VERTICAL_ACCURACY |
                  ahg10::GnssLocationFlags::HAS_HORIZONTAL_ACCURACY;
 
-        char latitudeDegreesString[PROP_VALUE_MAX];
-        char longitudeDegreesString[PROP_VALUE_MAX];
-        char verticalAccuracyMetersString[PROP_VALUE_MAX];
-        char timestampString[PROP_VALUE_MAX];
-        char speedString[PROP_VALUE_MAX];
-        char bearingString[PROP_VALUE_MAX];
+            char latitudeDegreesString[PROP_VALUE_MAX] = {0};
+            char longitudeDegreesString[PROP_VALUE_MAX] = {0};
+            char verticalAccuracyMetersString[PROP_VALUE_MAX] = {0};
+            char timestampString[PROP_VALUE_MAX] = {0};
+            char speedString[PROP_VALUE_MAX] = {0};
+            char bearingString[PROP_VALUE_MAX] = {0};
 
-        ahg10::GnssLocation location;
-
-        while (mIsActive == true) {
-        	if (property_get("persist.tesla-android.gps.latitude", latitudeDegreesString, "") > 0
-        		&& property_get("persist.tesla-android.gps.longitude", longitudeDegreesString, "") > 0
-        		&& property_get("persist.tesla-android.gps.vertical_accuracy", verticalAccuracyMetersString, "") > 0
-        		&& property_get("persist.tesla-android.gps.timestamp", timestampString, "") > 0) {
+            if (property_get("persist.tesla-android.gps.latitude", latitudeDegreesString, "") > 0
+                && property_get("persist.tesla-android.gps.longitude", longitudeDegreesString, "") > 0
+                && property_get("persist.tesla-android.gps.vertical_accuracy", verticalAccuracyMetersString, "") > 0
+                && property_get("persist.tesla-android.gps.timestamp", timestampString, "") > 0) {
 
                 double speedMetersPerSec = 0.0;
                 if (property_get("persist.tesla-android.gps.speed", speedString, "") > 0
-                    && std::string(speedString) != "not-available") {
+                    && std::string(speedString) != "not-available" && std::isdigit(speedString[0])) {
                     speedMetersPerSec = atof(speedString);
                     flags |= ahg10::GnssLocationFlags::HAS_SPEED;
                 }
 
                 double bearingDegrees = 0.0;
                 if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
-                    && std::string(bearingString) != "not-available") {
+                    && std::string(bearingString) != "not-available" && std::isdigit(bearingString[0])) {
                     bearingDegrees = atof(bearingString);
                     flags |= ahg10::GnssLocationFlags::HAS_BEARING;
                 }
 
-            	location = {
+                ahg10::GnssLocation location = {
                      .gnssLocationFlags = flags,
                      .latitudeDegrees = atof(latitudeDegreesString),
                      .longitudeDegrees = atof(longitudeDegreesString),
-                     .altitudeMeters = 0.0, // always 0 in Flutter Web
+                     .altitudeMeters = 0.0,
                      .speedMetersPerSec = static_cast<float>(speedMetersPerSec),
                      .bearingDegrees = static_cast<float>(bearingDegrees),
-                     .horizontalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)), // Required for Location object to be considered complete
-		     .verticalAccuracyMeters = 0.0,
-                     .speedAccuracyMetersPerSecond = 0.0, // always 0 in Flutter Web
-                     .bearingAccuracyDegrees = 0.0, // always 0 in Flutter Web
+                     .horizontalAccuracyMeters = static_cast<float>(atof(verticalAccuracyMetersString)),
+                     .verticalAccuracyMeters = 0.0,
+                     .speedAccuracyMetersPerSecond = 0.0,
+                     .bearingAccuracyDegrees = 0.0,
                      .timestamp = atoll(timestampString),
-            	};
-           	this->reportLocation(location);
+                };
+
+                this->reportLocation(location);
             }
-            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     });
 
     return true;
+}
+
+Gnss20::~Gnss20() {
+    stop();
 }
 
 Return<bool> Gnss20::stop() {
