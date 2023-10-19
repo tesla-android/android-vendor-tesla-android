@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2023.41.100 \
+    ro.tesla-android.build.version=2023.42.0.1 \
 
 ################################################################################
 
@@ -97,7 +97,7 @@ PRODUCT_PACKAGES += \
 
 # Google Apps
 
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk) 
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 
 ################################################################################
 
