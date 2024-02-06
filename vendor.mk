@@ -30,6 +30,13 @@ GD_SUPER_PARTITION_SIZE_MB := 7500
 
 ################################################################################
 
+# Lockscreen
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lockscreen.disable.default=true \
+
+################################################################################
+
 # Configuration manager
 
 PRODUCT_PACKAGES += \
