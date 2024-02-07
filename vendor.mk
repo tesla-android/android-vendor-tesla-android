@@ -37,6 +37,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ################################################################################
 
+# libprotobuf
+
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
+
+################################################################################
+
 # Configuration manager
 
 PRODUCT_PACKAGES += \
