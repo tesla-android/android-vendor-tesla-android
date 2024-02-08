@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 # Google Apps
 
-$(call inherit-product, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
 ################################################################################
 
