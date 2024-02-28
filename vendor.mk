@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2024.6.1 \
+    ro.tesla-android.build.version=2024.9.1 \
 
 ################################################################################
 
