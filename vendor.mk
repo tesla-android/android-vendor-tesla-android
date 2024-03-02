@@ -12,7 +12,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.releasetype=RELEASE \
 
-PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
+#PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
 PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
 PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
 
