@@ -15,6 +15,6 @@ PRODUCT_MANUFACTURER := RaspberryPiFoundation
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.tesla-android.device=cm4 \
-    tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/cm4/release \
+    persist.tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/cm4/release \
 
 GD_LCD_DENSITY = 200

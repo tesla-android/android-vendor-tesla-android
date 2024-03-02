@@ -10,7 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Flavor and signing
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.releasetype=RELEASE \
+    persist.tesla-android.releasetype=RELEASE \
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LOCAL_PATH)/signing/releasekey
 PRODUCT_OTA_PUBLIC_KEYS := $(LOCAL_PATH)/signing/platform
@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
     Updater \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    tesla-android.updater.allow_downgrading=true \
+    persist.tesla-android.updater.allow_downgrading=true \
 
 GD_SUPER_PARTITION_SIZE_MB := 7500
 

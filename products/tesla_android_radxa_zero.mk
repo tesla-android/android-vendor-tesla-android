@@ -15,6 +15,6 @@ PRODUCT_MANUFACTURER := radxa
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.tesla-android.device=radxa_zero \
-    tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/radxa_zero/release \
+    persist.tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/radxa_zero/release \
 
 GD_LCD_DENSITY = 200
