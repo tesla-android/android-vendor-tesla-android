@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2024.9.1 \
+    ro.tesla-android.build.version=2024.18.1 \
 
 ################################################################################
 
@@ -101,11 +101,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Prebuilt applications
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/preinstall.sh \
+    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall.sh \
     $(LOCAL_PATH)/applications/autokit/AutoKit.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/AutoKit.apk_ \
 
 PRODUCT_PACKAGES += \
     AutoKit \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/services/updateBootFiles/updateBootFiles.sh:$(TARGET_COPY_OUT_VENDOR)/etc/updateBootFiles.sh \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.tesla_android.bootFilesVersion=0 \
 
 ################################################################################
 
@@ -131,11 +137,11 @@ PRODUCT_PACKAGES += \
 
 # ih8sn
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/services/ih8sn/addon.d/60-ih8sn.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/60-ih8sn.sh \
-    $(LOCAL_PATH)/services/ih8sn/bin/ih8sn:$(TARGET_COPY_OUT_SYSTEM)/bin/ih8sn \
-    $(LOCAL_PATH)/services/ih8sn/etc/init/ih8sn.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/ih8sn.rc \
-    $(LOCAL_PATH)/services/ih8sn/etc/ih8sn.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/ih8sn.conf \
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/services/ih8sn/addon.d/60-ih8sn.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/60-ih8sn.sh \
+#    $(LOCAL_PATH)/services/ih8sn/bin/ih8sn:$(TARGET_COPY_OUT_SYSTEM)/bin/ih8sn \
+#    $(LOCAL_PATH)/services/ih8sn/etc/init/ih8sn.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/ih8sn.rc \
+#    $(LOCAL_PATH)/services/ih8sn/etc/ih8sn.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/ih8sn.conf \
 
 ################################################################################
 

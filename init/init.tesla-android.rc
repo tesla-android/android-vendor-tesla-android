@@ -5,8 +5,16 @@ on zygote-start
     mkdir /data/vendor/tesla-android/udev
     # Create directories OTA updates
     mkdir /data/vendor/tesla-android/ota 0770 system cache encryption=Require
+    mkdir /data/vendor/tesla-android/bootFiles
 
-service preinstall /system/bin/sh /vendor/etc/preinstall/preinstall.sh
+service updateBootFiles /system/bin/sh /vendor/etc/updateBootFiles.sh
+     user root 
+     group root
+     seclabel u:r:init:s0
+     disabled
+     oneshot
+
+service preinstall /system/bin/sh /vendor/etc/preinstall.sh
      user root
      group root
      seclabel u:r:init:s0
@@ -56,6 +64,7 @@ service usbmuxd /system/bin/usbmuxd -vv -f -n -z
     disabled    
 
 on property:sys.boot_completed=1
+    start updateBootFiles
     start usbmuxd
     start tesla-android-configuration-manager
     start tesla-android-usb-networking-initialiser
