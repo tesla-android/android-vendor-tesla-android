@@ -101,11 +101,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Prebuilt applications
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/preinstall.sh \
+    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall.sh \
     $(LOCAL_PATH)/applications/autokit/AutoKit.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/AutoKit.apk_ \
 
 PRODUCT_PACKAGES += \
     AutoKit \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/services/updateBootFiles/updateBootFiles.sh:$(TARGET_COPY_OUT_VENDOR)/etc/updateBootFiles.sh \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.tesla_android.bootFilesVersion=0 \
 
 ################################################################################
 
