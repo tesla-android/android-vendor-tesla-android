@@ -4,6 +4,9 @@ bootFilesVersion=$(getprop persist.tesla_android.bootFilesVersion)
 echo ${bootFilesVersion}
 if [ "${bootFilesVersion}" != "1" ]; then
    mount /dev/block/by-name/bootloader /data/vendor/tesla-android/bootFiles
+   rm -rf /data/vendor/tesla-android/bootFiles/overlays
+   mkdir -p /data/vendor/tesla-android/bootFiles/overlays
+   cp -r /vendor_dlkm/boot/overlays /data/vendor/tesla-android/bootFiles
    cp /vendor_dlkm/boot/bootcode.bin /data/vendor/tesla-android/bootFiles/bootcode.bin
    cp /vendor_dlkm/boot/start_x.elf /data/vendor/tesla-android/bootFiles/start_x.elf
    cp /vendor_dlkm/boot/start4x.elf /data/vendor/tesla-android/bootFiles/start4x.elf
