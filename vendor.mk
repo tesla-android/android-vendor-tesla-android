@@ -112,6 +112,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla_android.bootFilesVersion=0 \
+    debug.wm.disable_deprecated_abi_dialog=true \
 
 ################################################################################
 
