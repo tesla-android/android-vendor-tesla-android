@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2024.18.2 \
+    ro.tesla-android.build.version=2024.19.1 \
 
 ################################################################################
 
@@ -64,7 +64,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
     persist.tesla-android.virtual-display.renderer=0 \
-    persist.drm_hwc.headless.config="1088x832@60" \
+    persist.drm_hwc.headless.config="1088x832@30" \
     persist.tesla-android.browser_audio.is_enabled=0 \
     persist.tesla-android.browser_audio.volume=100 \
     persist.tesla-android.virtual-display.is_responsive=0 \
@@ -277,3 +277,26 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/services/iosTethering/lib/libssl.so.1.1:$(TARGET_COPY_OUT_SYSTEM)/lib/libssl.so.1.1 \
     $(LOCAL_PATH)/services/iosTethering/lib/libcrypto.so.1.1:$(TARGET_COPY_OUT_SYSTEM)/lib/libcrypto.so.1.1 \
     $(LOCAL_PATH)/services/iosTethering/lib/libusbmuxd-2.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libusbmuxd-2.0.so \
+
+################################################################################
+
+# Little memory killer
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.critical=0 \
+    ro.lmk.critical_upgrade=false \
+    ro.lmk.downgrade_pressure=100 \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_timeout_ms=100 \
+    ro.lmk.log_stats=true \
+    ro.lmk.low=1001 \
+    ro.lmk.medium=800 \
+    ro.lmk.upgrade_pressure=100 \
+    ro.lmk.use_minfree_levels=true \
+
+################################################################################
+
+# MGLRU
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.mglru_native.lru_gen_config=core \

@@ -16,5 +16,6 @@ if [ "${bootFilesVersion}" != "1" ]; then
    cp /vendor_dlkm/boot/bcm2711-rpi-400.dtb /data/vendor/tesla-android/bootFiles/bcm2711-rpi-400.dtb
    cp /vendor_dlkm/boot/bcm2711-rpi-cm4.dtb /data/vendor/tesla-android/bootFiles/bcm2711-rpi-cm4.dtb
    setprop persist.tesla_android.bootFilesVersion 1
+   sync
    reboot
 fi
