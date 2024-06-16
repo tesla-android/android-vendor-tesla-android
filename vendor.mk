@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2024.23.1 \
+    ro.tesla-android.build.version=2024.24.1 \
 
 ################################################################################
 
@@ -62,7 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.resolution.width=1088 \
     persist.tesla-android.virtual-display.resolution.height=832 \
     persist.tesla-android.virtual-display.refresh_rate=30 \
-    persist.tesla-android.virtual-display.quality=90 \
+    persist.tesla-android.virtual-display.quality=70 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
     persist.tesla-android.virtual-display.renderer=0 \
