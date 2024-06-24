@@ -104,7 +104,10 @@ _flutter.buildConfig = {"engineRevision":"f6344b75dcf861d8bf1f1322780b8811f982e3
 
   _flutter.loader.load({
     onEntrypointLoaded: async function(engineInitializer) {
-      const appRunner = await engineInitializer.initializeEngine();
+      const appRunner = await engineInitializer.initializeEngine({
+        renderer: "canvaskit",
+        canvasKitBaseUrl: "/canvaskit/",
+      });
 
       window.setTimeout(function () {
         loading.remove();
