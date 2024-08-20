@@ -1,5 +1,5 @@
-################################################################################
-
+Damarcus Jones Ai Chips 
+Juntylpro Gaming Inc 
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
