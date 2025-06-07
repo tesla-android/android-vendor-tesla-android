@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.14.1 \
+    ro.tesla-android.build.version=2025.24.1 \
 
 ################################################################################
 
@@ -66,6 +66,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
     persist.tesla-android.virtual-display.renderer=0 \
+    persist.tesla-android.virtual-display.is-rear-display-enabled=0 \
+    persist.tesla-android.virtual-display.is-rear-display-prioritised=0 \
     persist.drm_hwc.headless.config="1088x832@30" \
     persist.tesla-android.browser_audio.is_enabled=0 \
     persist.tesla-android.browser_audio.volume=100 \
