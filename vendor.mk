@@ -236,8 +236,6 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/connectivity_check.txt \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/status.html \
-     $(LOCAL_PATH)/services/lighttpd/www-default/audioplayback.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/audioplayback.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/pcmplayer-processor.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/pcmplayer-processor.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/version.json \
      $(LOCAL_PATH)/services/lighttpd/www-default/assets/AssetManifest.bin:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/assets/AssetManifest.bin \
      $(LOCAL_PATH)/services/lighttpd/www-default/assets/shaders/ink_sparkle.frag:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/assets/shaders/ink_sparkle.frag \
@@ -245,12 +243,8 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/chromium/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/chromium/canvaskit.wasm \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.wasm \
-     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.worker.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/h264.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/h264_worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264_worker.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/webGLWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/webGLWebCodecs.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/workerWebGLWebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/workerWebGLWebCodecs.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/imgTag.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/imgTag.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/android.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/android.html \
      $(LOCAL_PATH)/services/lighttpd/www-default/estimator.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/estimator.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/reconnecting-websocket.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/reconnecting-websocket.js \
@@ -260,8 +254,12 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/chromium/canvaskit.js.symbols:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/chromium/canvaskit.js.symbols \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.js.symbols:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.js.symbols \
      $(LOCAL_PATH)/services/lighttpd/www-default/flutter_bootstrap.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/flutter_bootstrap.js \
-#     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.mjs:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.mjs \
-#     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.mjs:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.mjs \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/Decoder.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/Decoder.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/YUVCanvas.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/YUVCanvas.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/avc.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/avc.wasm \
+
 
 ################################################################################
 
