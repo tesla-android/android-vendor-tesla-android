@@ -44,6 +44,19 @@ PRODUCT_PACKAGES += \
 
 ################################################################################
 
+# Audio relay
+
+PRODUCT_PACKAGES += \
+    tesla-android-audio-relay \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ta.mux.level=1 \
+    persist.ta.mux.trace.splitter=0 \
+    persist.ta.mux.trace.avio=0 \
+    persist.ta.mux.trace.push=0 \
+
+################################################################################
+
 # Configuration manager
 
 PRODUCT_PACKAGES += \

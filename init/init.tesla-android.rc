@@ -56,6 +56,14 @@ service tesla-android-usb-networking-initialiser /system/bin/tesla-android-usb-n
     group root
     seclabel u:r:init:s0
     disabled    
+
+service tesla-android-audio-relay /vendor/bin/tesla-android-audio-relay
+    class main
+    user system
+    group system
+    socket ws_audio stream 0666 system system
+    seclabel u:r:audioserver:s0
+    disabled
     
 service usbmuxd /system/bin/usbmuxd -vv -f -n -z
     user root
@@ -71,5 +79,6 @@ on property:sys.boot_completed=1
     start tesla-android-virtual-touchscreen
     start tesla-android-virtual-display
     start tesla-android-virtual-gnss
+    start tesla-android-audio-relay
     start lighttpd
     start preinstall
