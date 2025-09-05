@@ -44,6 +44,13 @@ PRODUCT_PACKAGES += \
 
 ################################################################################
 
+# Audio relay
+
+PRODUCT_PACKAGES += \
+    tesla-android-audio-relay \
+
+################################################################################
+
 # Configuration manager
 
 PRODUCT_PACKAGES += \
