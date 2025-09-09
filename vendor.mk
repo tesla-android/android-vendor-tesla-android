@@ -322,3 +322,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.mglru_native.lru_gen_config=core \
+
+################################################################################
+
+# Connectivity spoofing
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.waydroid.fake_wifi=* \
