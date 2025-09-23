@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.38.1 \
+    ro.tesla-android.build.version=2025.39.1 \
 
 ################################################################################
 
@@ -256,8 +256,6 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/chromium/canvaskit.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/chromium/canvaskit.wasm \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.wasm \
-     $(LOCAL_PATH)/services/lighttpd/www-default/h264.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/h264_worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264_worker.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/android.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/android.html \
      $(LOCAL_PATH)/services/lighttpd/www-default/estimator.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/estimator.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/reconnecting-websocket.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/reconnecting-websocket.js \
@@ -272,6 +270,14 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.js.symbols:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.js.symbols \
      $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/avc.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/avc.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/Decoder.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/Decoder.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/h264Brodway.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264Brodway.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/h264BrodwayWorker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264BrodwayWorker.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/h264WebCodecs.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264WebCodecs.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/h264WebCodecsWorker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264WebCodecsWorker.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/mjpeg.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/mjpeg.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/YUVCanvas.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/YUVCanvas.js \
 
 
 ################################################################################
