@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.39.1 \
+    ro.tesla-android.build.version=2025.39.2 \
 
 ################################################################################
 
@@ -50,7 +50,7 @@ PRODUCT_PACKAGES += \
     tesla-android-audio-relay \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.ta.mux.level=1 \
+    persist.ta.mux.level=0 \
     persist.ta.mux.trace.splitter=0 \
     persist.ta.mux.trace.avio=0 \
     persist.ta.mux.trace.push=0 \
@@ -77,7 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.refresh_rate=30 \
     persist.tesla-android.virtual-display.quality=70 \
     persist.tesla-android.virtual-display.density=200 \
-    persist.tesla-android.virtual-display.lowres=0 \
+    persist.tesla-android.virtual-display.resolutionPreset=0 \
     persist.tesla-android.virtual-display.renderer=0 \
     persist.tesla-android.virtual-display.is-rear-display-enabled=0 \
     persist.tesla-android.virtual-display.is-rear-display-prioritised=0 \
