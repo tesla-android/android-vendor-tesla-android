@@ -1,0 +1,33 @@
+//
+// Copyright (C) 2011 The Android-x86 Open Source Project
+// Copyright (C) 2025 KonstaKANG
+// Copyright (C) 2025 Tesla Android Project
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+
+cc_library_shared {
+    name: "gps.default",
+    vintf_fragments: ["android.hardware.gnss@1.0-service.default.xml"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: ["gps.c"],
+    header_libs: ["libhardware_headers"],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+}
+
+cc_binary {
+    name: "vendor_gps_timeset",
+    vendor: true,
+    srcs: ["vendor_gps_timeset.c"],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+    ],
+    init_rc: ["vendor.gps-timeset.rc"],
+}

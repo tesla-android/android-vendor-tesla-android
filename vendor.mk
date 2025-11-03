@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.44.1.1 \
+    ro.tesla-android.build.version=2025.45.1 \
 
 ################################################################################
 
@@ -93,13 +93,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # GPS
 
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0-service.tesla-android \
+    gps.default \
+    vendor_gps_timeset \
+    android.hardware.gnss@1.0 \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     tesla-android-virtual-gnss
 
 BOARD_SEPOLICY_DIRS += vendor/tesla-android/hardware/gnss/sepolicy
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.gps.device=ttyAMA2 \
+    persist.vendor.gps.time_sync=0 \
+    persist.vendor.gps.ttybaud=9600
 
 ################################################################################
 
@@ -121,9 +130,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall.sh \
     $(LOCAL_PATH)/applications/autokit/AutoKit.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/AutoKit.apk_ \
+    $(LOCAL_PATH)/applications/gpstest/gpstest.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/gpstest.apk_ \
 
 PRODUCT_PACKAGES += \
     AutoKit \
+    gpstest \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/services/updateBootFiles/updateBootFiles.sh:$(TARGET_COPY_OUT_VENDOR)/etc/updateBootFiles.sh \

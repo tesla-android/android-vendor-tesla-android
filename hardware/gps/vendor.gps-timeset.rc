@@ -1,0 +1,10 @@
+# Runs the helper with CAP_SYS_TIME; argument provided via init expansion.
+service vendor.gps-timeset /vendor/bin/vendor_gps_timeset ${sys.vendor.gps.epoch_s}
+    class late_start
+    user root
+    group root
+    seclabel u:r:init:s0
+    capabilities SYS_TIME
+    disabled
+    oneshot
+
