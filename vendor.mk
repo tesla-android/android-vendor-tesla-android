@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.46.1 \
+    ro.tesla-android.build.version=2025.48.1 \
 
 ################################################################################
 
@@ -62,7 +62,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     tesla-android-configuration-manager \
 
-# Renderer and isH264 are unused now
+# Renderer is unused now
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.softap.band_type=2 \
@@ -78,14 +78,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.virtual-display.quality=70 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.resolutionPreset=0 \
-    persist.tesla-android.virtual-display.renderer=0 \
+    persist.tesla-android.virtual-display.renderer=1 \
     persist.tesla-android.virtual-display.is-rear-display-enabled=0 \
     persist.tesla-android.virtual-display.is-rear-display-prioritised=0 \
     persist.drm_hwc.headless.config="1088x832@30" \
-    persist.tesla-android.browser_audio.is_enabled=0 \
+    persist.tesla-android.browser_audio.is_enabled=1 \
     persist.tesla-android.browser_audio.volume=100 \
     persist.tesla-android.virtual-display.is_responsive=0 \
-    persist.tesla-android.virtual-display.is_h264=0 \
+    persist.tesla-android.virtual-display.is_h264=1 \
     persist.tesla-android.gps.is_active=0 \
 
 ################################################################################
@@ -247,6 +247,8 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-70x70.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/icons/ms-icon-70x70.png \
      $(LOCAL_PATH)/services/lighttpd/www-default/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/index.html \
      $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.mjs:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.mjs \
+     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.wasm \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/connectivity_check.txt \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/status.html \
      $(LOCAL_PATH)/services/lighttpd/www-default/version.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/version.json \
