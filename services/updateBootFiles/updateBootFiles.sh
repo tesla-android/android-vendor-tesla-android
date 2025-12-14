@@ -2,7 +2,7 @@
 
 bootFilesVersion=$(getprop persist.tesla_android.bootFilesVersion)
 echo ${bootFilesVersion}
-if [ "${bootFilesVersion}" != "2025.44.1" ]; then
+if [ "${bootFilesVersion}" != "2025.51.1" ]; then
    mount /dev/block/by-name/bootloader /data/vendor/tesla-android/bootFiles
    rm -rf /data/vendor/tesla-android/bootFiles/overlays
    mkdir -p /data/vendor/tesla-android/bootFiles/overlays
@@ -16,7 +16,6 @@ if [ "${bootFilesVersion}" != "2025.44.1" ]; then
    cp /vendor_dlkm/boot/bcm2711-rpi-400.dtb /data/vendor/tesla-android/bootFiles/bcm2711-rpi-400.dtb
    cp /vendor_dlkm/boot/bcm2711-rpi-cm4.dtb /data/vendor/tesla-android/bootFiles/bcm2711-rpi-cm4.dtb
    cp /vendor_dlkm/boot/config.txt /data/vendor/tesla-android/bootFiles/config.txt
-   setprop persist.tesla_android.bootFilesVersion "2025.44.1"
+   setprop persist.tesla_android.bootFilesVersion "2025.51.1"
    sync
-   reboot
 fi
