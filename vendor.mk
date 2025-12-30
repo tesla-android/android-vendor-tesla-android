@@ -3,7 +3,7 @@
 # Version
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.tesla-android.build.version=2025.46.2 \
+    ro.tesla-android.build.version=2026.1.1 \
 
 ################################################################################
 
@@ -267,9 +267,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/flutter_bootstrap.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/flutter_bootstrap.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/audioplayback.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/audioplayback.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/audio-ws-worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/audio-ws-worker.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.js \
-     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.js.symbols:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.js.symbols \
-     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm_heavy.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm_heavy.wasm \
+     $(LOCAL_PATH)/services/lighttpd/www-default/canvaskit/skwasm.worker.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/canvaskit/skwasm.worker.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/avc.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/avc.wasm \
      $(LOCAL_PATH)/services/lighttpd/www-default/Decoder.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/Decoder.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/h264Brodway.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/h264Brodway.js \
