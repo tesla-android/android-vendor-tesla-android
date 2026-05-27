@@ -6,7 +6,7 @@
   TAHtml.releaseNotesData = {
   "versions": [
 	{
-      "versionName": "2026.6.1",
+      "versionName": "2026.22.1",
       "changelogItems": [
         {
           "title": "Frontend Beta",
