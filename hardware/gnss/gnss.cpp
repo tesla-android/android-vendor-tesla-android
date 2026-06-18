@@ -103,6 +103,7 @@ Return<bool> Gnss20::start() {
     }
 
     mIsActive = true;
+    double bearingDegrees = 0.0;
     mThread = std::thread([this]() {
         while (mIsActive) {
             unsigned short flags =
@@ -129,12 +130,11 @@ Return<bool> Gnss20::start() {
                     flags |= ahg10::GnssLocationFlags::HAS_SPEED;
                 }
 
-                double bearingDegrees = 0.0;
                 if (property_get("persist.tesla-android.gps.bearing", bearingString, "") > 0
                     && std::string(bearingString) != "not-available" && std::isdigit(bearingString[0])) {
                     bearingDegrees = atof(bearingString);
-                    flags |= ahg10::GnssLocationFlags::HAS_BEARING;
                 }
+                flags |= ahg10::GnssLocationFlags::HAS_BEARING;
 
                 ahg10::GnssLocation location = {
                      .gnssLocationFlags = flags,
