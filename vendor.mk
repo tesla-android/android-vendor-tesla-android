@@ -57,6 +57,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ################################################################################
 
+# Browser microphone: the Tesla browser mic (getUserMedia, mic-capture.js) is sent to
+# tesla-android-mic-bridge, played into the ALSA Loopback card (CONFIG_SND_ALOOP) and read
+# back as the device microphone by audio.primary.tesla_android, which the rpi4 and cm4
+# products select. Off by default, enable with:
+#   setprop persist.tesla-android.browser_mic.is_enabled 1
+
+PRODUCT_PACKAGES += \
+    tesla-android-mic-bridge \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.tesla-android.browser_mic.is_enabled=0 \
+
+################################################################################
+
 # Configuration manager
 
 PRODUCT_PACKAGES += \
@@ -303,6 +317,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/www-default/icons/ms-icon-70x70.png:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/icons/ms-icon-70x70.png \
      $(LOCAL_PATH)/services/lighttpd/www-default/index.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/index.html \
      $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.js \
+     $(LOCAL_PATH)/services/lighttpd/www-default/mic-capture.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/mic-capture.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/mjpeg.js:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/mjpeg.js \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/connectivity_check.txt:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/connectivity_check.txt \
      $(LOCAL_PATH)/services/lighttpd/www-default/online/status.html:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/online/status.html \

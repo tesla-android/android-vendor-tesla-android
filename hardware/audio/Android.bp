@@ -1,0 +1,15 @@
+// Primary audio HAL for Tesla Android: AOSP stub output, microphone input from the
+// ALSA Loopback card fed by tesla-android-mic-bridge (see audio_hw.c).
+// Loaded instead of audio.primary.default via ro.hardware.audio.primary=tesla_android.
+cc_library_shared {
+    name: "audio.primary.tesla_android",
+    relative_install_path: "hw",
+    proprietary: true,
+    srcs: ["audio_hw.c"],
+    header_libs: ["libhardware_headers"],
+    shared_libs: [
+        "liblog",
+        "libtinyalsa",
+    ],
+    cflags: ["-Wall", "-Werror", "-Wno-unused-parameter"],
+}

@@ -18,3 +18,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.updater.uri=https://ota.teslaandroid.com/api/v1/cm4/release \
 
 GD_LCD_DENSITY = 200
+
+# Primary audio HAL: the AOSP stub (what this device loaded so far) with microphone
+# input from the ALSA Loopback card, used by the browser microphone (see vendor.mk)
+PRODUCT_PACKAGES += \
+    audio.primary.tesla_android \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.audio.primary=tesla_android \

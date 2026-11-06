@@ -65,6 +65,13 @@ service tesla-android-audio-relay /vendor/bin/tesla-android-audio-relay
     seclabel u:r:audioserver:s0
     disabled
     
+service tesla-android-mic-bridge /vendor/bin/tesla-android-mic-bridge 9997 2
+    class main
+    user system
+    group system audio inet
+    seclabel u:r:init:s0
+    disabled
+
 service usbmuxd /system/bin/usbmuxd -vv -f -n -z
     user root
     group root
@@ -91,3 +98,13 @@ on property:sys.boot_completed=1
     start tesla-android-audio-relay
     start lighttpd
     start preinstall
+
+# Browser microphone (opt-in): Tesla browser mic -> ALSA Loopback -> audio HAL input.
+# Only on products that select the matching HAL (rpi4, cm4). The Loopback module is loaded
+# here, so nothing changes until the feature is enabled.
+on property:sys.boot_completed=1 && property:persist.tesla-android.browser_mic.is_enabled=1 && property:ro.hardware.audio.primary=tesla_android
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules snd-aloop pcm_substreams=1
+    start tesla-android-mic-bridge
+
+on property:persist.tesla-android.browser_mic.is_enabled=0
+    stop tesla-android-mic-bridge
