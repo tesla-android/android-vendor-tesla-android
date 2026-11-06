@@ -1,0 +1,12 @@
+// Tesla browser microphone -> ALSA Loopback (see tesla-android-mic-bridge.c).
+// Started by init when persist.tesla-android.browser_mic.is_enabled=1.
+cc_binary {
+    name: "tesla-android-mic-bridge",
+    vendor: true,
+    srcs: ["tesla-android-mic-bridge.c"],
+    shared_libs: [
+        "liblog",
+        "libtinyalsa",
+    ],
+    cflags: ["-Wall", "-Werror"],
+}
